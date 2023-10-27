@@ -1,0 +1,94 @@
+/* Tooltip.css */
+
+.tooltipContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+
+    display: flex;
+    padding: 10px 12px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px;
+
+    .tooltipContents {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        flex: 1 0 0;
+    }
+
+    /* Dark Dropdown Shadow */
+    box-shadow: 0px 2px 8px 0px rgba(38, 44, 54, 0.30);
+
+
+    &.normal {
+        background-color: #F2F6FA;
+        color: #1E394E;
+    }
+
+    &.warning {
+        background-color: #F9E6CF;
+        color: #1E394E;
+    }
+
+    &.error {
+        background-color: #F9E9E8;
+        color: #1E394E;
+    }
+}
+
+.tooltipTitle {
+    margin-bottom: 4px;
+    /* Typography */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.tooltipBody {
+    /* Typography */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.tooltipArrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 8px;
+    border-style: solid;
+    transform: translateX(-50%);
+
+
+    /* Dark Dropdown Shadow */
+    /* box-shadow: 0px 2px 8px 0px rgba(38, 44, 54, 0.30); */
+
+    &.normal {
+        border-color: #F2F6FA transparent transparent transparent;
+    }
+
+    &.warning {
+        border-color: #F9E6CF transparent transparent transparent;
+    }
+
+    &.error {
+        border-color: #F9E9E8 transparent transparent transparent;
+    }
+}
