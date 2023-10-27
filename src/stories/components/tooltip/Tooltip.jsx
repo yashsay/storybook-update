@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Tooltip.module.scss";
 
-export const Tooltip = ({ children, body, title, variant, placement, defaultIsOpen }) => {
+export const Tooltip = ({
+  children,
+  body,
+  title,
+  variant,
+  defaultIsOpen,
+  placement,
+}) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(defaultIsOpen);
 
   const showTooltip = () => {
@@ -18,6 +25,8 @@ export const Tooltip = ({ children, body, title, variant, placement, defaultIsOp
     setIsTooltipVisible(defaultIsOpen);
   }, [defaultIsOpen]);
 
+  const tooltipClass = `${styles.tooltip} ${styles[variant]} ${styles[placement]}`;
+
   return (
     <div
       className={styles.tooltipContainer}
@@ -26,16 +35,12 @@ export const Tooltip = ({ children, body, title, variant, placement, defaultIsOp
     >
       {children}
       {isTooltipVisible && (
-        <div
-          className={`${styles.tooltip} ${styles[variant]} ${styles[placement]}`}
-        >
+        <div className={tooltipClass}>
           <div className={styles.tooltipContents}>
             {title && <div className={styles.tooltipTitle}>{title}</div>}
             <div className={styles.tooltipBody}>{body}</div>
           </div>
-          <div
-            className={`${styles.tooltipArrow} ${styles[variant]} ${styles[placement]}`}
-          ></div>
+          <div className={`${styles.tooltipArrow} ${styles[variant]}`}></div>
         </div>
       )}
     </div>

@@ -63,3 +63,59 @@ export const TooltipDefaultOpen = {
         defaultIsOpen: true
     }
 };
+
+export const TooltipWarningOpen = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true,
+        variant: "warning"
+    }
+};
+
+export const TooltipErrorOpen = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true,
+        variant: "error"
+    }
+};
+
+export const TooltipLongTextOpen = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true
+    }
+};
+
+export const TooltipBottom = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true
+    }
+};
+
+export const TooltipLeft = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true
+    }
+};
+
+export const TooltipRight = {
+    args: {
+        title: "Title",
+        body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
+        children: <button>Hover on me!</button>,
+        defaultIsOpen: true
+    }
+};

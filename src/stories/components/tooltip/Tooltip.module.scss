@@ -1,4 +1,4 @@
-/* Tooltip.css */
+/* Tooltip.module.scss */
 
 .tooltipContainer {
     position: relative;
@@ -10,18 +10,16 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    border-radius: 5px;
-    padding: 10px;
+    width: 294px;
     text-align: center;
     z-index: 1;
-
     display: flex;
     padding: 10px 12px;
     justify-content: center;
     align-items: center;
     align-self: stretch;
     border-radius: 4px;
+    margin-bottom: 12px;
 
     .tooltipContents {
         display: flex;
@@ -33,7 +31,6 @@
 
     /* Dark Dropdown Shadow */
     box-shadow: 0px 2px 8px 0px rgba(38, 44, 54, 0.30);
-
 
     &.normal {
         background-color: #F2F6FA;
@@ -49,6 +46,14 @@
         background-color: #F9E9E8;
         color: #1E394E;
     }
+
+    &.top {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* ... Other placement styles ... */
 }
 
 .tooltipTitle {
@@ -58,6 +63,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 18px;
+    text-align: start;
 }
 
 .tooltipBody {
@@ -66,29 +72,49 @@
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+    text-align: start;
 }
 
 .tooltipArrow {
+    width: 50px;
+    height: 25px;
     position: absolute;
     top: 100%;
     left: 50%;
-    border-width: 8px;
-    border-style: solid;
     transform: translateX(-50%);
+    overflow: hidden;
 
+    &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
 
-    /* Dark Dropdown Shadow */
-    /* box-shadow: 0px 2px 8px 0px rgba(38, 44, 54, 0.30); */
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        top: 0;
+        left: 50%;
+        box-shadow: 0px 2px 8px 0px rgba(38, 44, 54, 0.30);
+    }
+
 
     &.normal {
-        border-color: #F2F6FA transparent transparent transparent;
+        &::after {
+            background-color: #F2F6FA;
+            color: #1E394E;
+        }
     }
 
     &.warning {
-        border-color: #F9E6CF transparent transparent transparent;
+        &::after {
+            background-color: #F9E6CF;
+            color: #1E394E;
+        }
     }
 
     &.error {
-        border-color: #F9E9E8 transparent transparent transparent;
+        &::after {
+            background-color: #F9E9E8;
+            color: #1E394E;
+        }
     }
 }
