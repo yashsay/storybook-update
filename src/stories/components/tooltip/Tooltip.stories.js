@@ -89,7 +89,8 @@ export const TooltipLongTextOpen = {
         title: "Title",
         body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
         children: <button>Hover on me!</button>,
-        defaultIsOpen: true
+        defaultIsOpen: true,
+        alwaysOpen: true,
     }
 };
 
@@ -98,7 +99,9 @@ export const TooltipBottom = {
         title: "Title",
         body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
         children: <button>Hover on me!</button>,
-        defaultIsOpen: true
+        defaultIsOpen: true,
+        placement: "bottom",
+        alwaysOpen: true,
     }
 };
 
@@ -107,7 +110,9 @@ export const TooltipLeft = {
         title: "Title",
         body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
         children: <button>Hover on me!</button>,
-        defaultIsOpen: true
+        defaultIsOpen: true,
+        placement: "left",
+        alwaysOpen: true,
     }
 };
 
@@ -116,6 +121,8 @@ export const TooltipRight = {
         title: "Title",
         body: "This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example. This is a tooltip example.",
         children: <button>Hover on me!</button>,
-        defaultIsOpen: true
+        defaultIsOpen: true,
+        placement: "right",
+        alwaysOpen: true,
     }
 };

@@ -9,21 +9,28 @@ export const Tooltip = ({
   variant,
   defaultIsOpen,
   placement,
+  alwaysOpen,
 }) => {
-  const [isTooltipVisible, setIsTooltipVisible] = useState(defaultIsOpen);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(
+    alwaysOpen || defaultIsOpen
+  );
 
   const showTooltip = () => {
-    setIsTooltipVisible(true);
+    if (!alwaysOpen) {
+      setIsTooltipVisible(true);
+    }
   };
 
   const hideTooltip = () => {
-    setIsTooltipVisible(false);
+    if (!alwaysOpen) {
+      setIsTooltipVisible(false);
+    }
   };
 
-  // Use useEffect to update the tooltip visibility when defaultIsOpen changes.
+  // Use useEffect to update the tooltip visibility when defaultIsOpen or alwaysOpen changes.
   useEffect(() => {
-    setIsTooltipVisible(defaultIsOpen);
-  }, [defaultIsOpen]);
+    setIsTooltipVisible(alwaysOpen || defaultIsOpen);
+  }, [defaultIsOpen, alwaysOpen]);
 
   const tooltipClass = `${styles.tooltip} ${styles[variant]} ${styles[placement]}`;
 
@@ -36,11 +43,20 @@ export const Tooltip = ({
       {children}
       {isTooltipVisible && (
         <div className={tooltipClass}>
+          {(placement === "bottom" || placement === "left" )&& (
+            <div
+              className={`${styles.tooltipArrow} ${styles[variant]} ${styles[placement]}`}
+            ></div>
+          )}
           <div className={styles.tooltipContents}>
             {title && <div className={styles.tooltipTitle}>{title}</div>}
             <div className={styles.tooltipBody}>{body}</div>
           </div>
-          <div className={`${styles.tooltipArrow} ${styles[variant]}`}></div>
+          {(placement === "top" || placement === "right") && (
+            <div
+              className={`${styles.tooltipArrow} ${styles[variant]} ${styles[placement]}`}
+            ></div>
+          )}
         </div>
       )}
     </div>
@@ -67,6 +83,7 @@ Tooltip.propTypes = {
     "right",
     "rightEnd",
   ]),
+  alwaysOpen: PropTypes.bool, // Update the PropTypes to expect a boolean value for alwaysOpen.
 };
 
 Tooltip.defaultProps = {
@@ -74,4 +91,5 @@ Tooltip.defaultProps = {
   variant: "normal",
   defaultIsOpen: false,
   placement: "top",
+  alwaysOpen: false,
 };
