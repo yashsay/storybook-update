@@ -1,10 +1,9 @@
-import { Button } from './Button';
-import { ReactComponent as InfoIcon } from "../../assets/info.svg";
+import { IonButton } from './IonButton';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/IonButton',
+  component: IonButton,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -47,7 +46,7 @@ export const PrimaryButtonWithIcon = {
   args: {
     label: 'Primary Icon',
     variant: 'primary',
-    icon: <InfoIcon />,
+    icon: "AttachmentsIndicator",
     // disabled: true
   },
 };
@@ -56,7 +55,7 @@ export const SecondaryButtonWithIcon = {
   args: {
     label: 'Secondary Icon',
     variant: 'secondary',
-    icon: <InfoIcon />,
+    icon: "AttachmentsIndicator",
     // disabled: true
   },
 };
@@ -65,7 +64,7 @@ export const TertiaryButtonWithIcon = {
   args: {
     label: 'Tertiary Icon',
     variant: 'tertiary',
-    icon: <InfoIcon />,
+    icon: "AttachmentsIndicator",
     // disabled: true
   },
 };
@@ -76,14 +75,13 @@ export const IconButton = {
     variant: 'primary',
     iconButton: true,
     textButton: false,
-    icon: <InfoIcon />,
+    icon: "CommentsIndicator",
   },
 };
 
 export const TextButton = {
   args: {
     label: 'Text Button',
-    variant: 'primary',
     textButton: true,
     iconButton: false,
   },

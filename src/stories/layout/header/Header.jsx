@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button } from "../../components/button/Button";
+import { IonButton } from "../../components/ionButton/IonButton";
 import "./header.css";
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
@@ -37,14 +37,14 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <IonButton size="sm" onClick={onLogout} label="Log out" />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button
-              primary
-              size="small"
+            <IonButton size="sm" onClick={onLogin} label="Log in" />
+            <IonButton
+              variant={"primary"}
+              size="sm"
               onClick={onCreateAccount}
               label="Sign up"
             />

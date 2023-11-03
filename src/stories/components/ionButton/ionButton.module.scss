@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:ital,wght@0,400;1,400&display=swap");
+
+// Base Styles for Button Component
+body {
+    font-family: "Nunito";
+}
+
+.baseStyles {
+    // Layout
+    font-family: "Nunito";
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    // Typography
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+
+    &.xs {
+        letter-spacing: 0.45px;
+        line-height: 14px;
+        height: 20px;
+        min-width: 48px;
+        font-size: 10px;
+        padding: 3px 12px;
+        border-radius: 4px;
+        gap: 4px;
+    }
+
+    &.xsIconButton {
+        flex-shrink: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+    }
+
+    &.sm {
+        letter-spacing: 0.48px;
+        line-height: 16px;
+        height: 26px;
+        min-width: 64px;
+        font-size: 12px;
+        padding: 5px 14px;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    &.smIconButton {
+        flex-shrink: 0;
+        height: 26px;
+        width: 26px;
+        border-radius: 5px;
+    }
+
+    &.md {
+        letter-spacing: 0.49px;
+        line-height: 18px;
+        height: 32px;
+        min-width: 81px;
+        font-size: 14px;
+        padding: 7px 16px;
+        border-radius: 6px;
+        gap: 6px;
+    }
+
+    &.mdIconButton {
+        flex-shrink: 0;
+        height: 32px;
+        width: 32px;
+        border-radius: 6px;
+    }
+
+    &.lg {
+        letter-spacing: 0.48px;
+        line-height: 20px;
+        height: 38px;
+        min-width: 96px;
+        font-size: 16px;
+        padding: 9px 18px;
+        border-radius: 7px;
+        gap: 7px;
+    }
+
+    &.lgIconButton {
+        flex-shrink: 0;
+        height: 38px;
+        width: 38px;
+        border-radius: 7px;
+    }
+
+    // Icon styles
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            path {
+                fill: currentColor;
+            }
+        }
+    }
+
+    // Primary variant
+    &.primary {
+        border: none;
+        background: var(--primary-blue-1-cta-default, #007CC1);
+        color: var(--background-white-base-bkg-texts, #FFF);
+
+        &:hover {
+            background: var(--cta-blue-2-hover-state, #00669E);
+        }
+
+        &:active {
+            background: var(--cta-blue-3-pressed, #005483);
+        }
+
+        &:disabled {
+            background: var(--cta-disabled-button-background, #F2F6FA);
+            color: var(--cta-disabled-button-text, #79B9DE);
+            cursor: not-allowed;
+        }
+    }
+
+    // Secondary variant
+    &.secondary {
+        background: var(--background-white-base-bkg-texts, #FFF);
+        color: var(--primary-blue-1-cta-default, #007CC1);
+
+        &.lg {
+            border: 2px solid var(--cta-blue-1-default, #007CC1);
+
+            &:hover {
+                border: 3px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--cta-cool-grey-3-disabled, #F2F6FA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:active {
+                border: 3px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--uicool-practice-cool-gray-2, #E5E8EA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:disabled {
+                border: 2px solid var(--cta-disabled-button-text, #79B9DE);
+                background: var(--background-white-base-bkg-texts, #FFF);
+                color: var(--cta-disabled-button-text, #79B9DE);
+                cursor: not-allowed;
+
+                .icon {
+                    svg {
+                        color: var(--cta-disabled-button-text, #79B9DE);
+                    }
+                }
+            }
+        }
+
+        &.md {
+            border: 2px solid var(--cta-blue-1-default, #007CC1);
+
+            &:hover {
+                border: 3px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--cta-cool-grey-3-disabled, #F2F6FA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:active {
+                border: 3px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--uicool-practice-cool-gray-2, #E5E8EA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:disabled {
+                border: 2px solid var(--cta-disabled-button-text, #79B9DE);
+                background: var(--background-white-base-bkg-texts, #FFF);
+                color: var(--cta-disabled-button-text, #79B9DE);
+                cursor: not-allowed;
+
+                .icon {
+                    svg {
+                        color: var(--cta-disabled-button-text, #79B9DE);
+                    }
+                }
+            }
+        }
+
+        &.sm {
+            border: 1px solid var(--cta-blue-1-default, #007CC1);
+
+            &:hover {
+                border: 2px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--cta-cool-grey-3-disabled, #F2F6FA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:active {
+                border: 2px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--uicool-practice-cool-gray-2, #E5E8EA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:disabled {
+                border: 1px solid var(--cta-disabled-button-text, #79B9DE);
+                background: var(--background-white-base-bkg-texts, #FFF);
+                color: var(--cta-disabled-button-text, #79B9DE);
+                cursor: not-allowed;
+
+                .icon {
+                    svg {
+                        color: var(--cta-disabled-button-text, #79B9DE);
+                    }
+                }
+            }
+        }
+
+        &.xs {
+            border: 1px solid var(--cta-blue-1-default, #007CC1);
+
+            &:hover {
+                border: 2px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--cta-cool-grey-3-disabled, #F2F6FA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:active {
+                border: 2px solid var(--cta-blue-3-pressed, #005483);
+                background: var(--uicool-practice-cool-gray-2, #E5E8EA);
+                color: var(--cta-blue-3-pressed, #005483);
+
+                .icon {
+                    svg {
+                        color: var(--cta-blue-3-pressed, #005483);
+                    }
+                }
+            }
+
+            &:disabled {
+                border: 1px solid var(--cta-disabled-button-text, #79B9DE);
+                background: var(--background-white-base-bkg-texts, #FFF);
+                color: var(--cta-disabled-button-text, #79B9DE);
+                cursor: not-allowed;
+
+                .icon {
+                    svg {
+                        color: var(--cta-disabled-button-text, #79B9DE);
+                    }
+                }
+            }
+        }
+    }
+
+    // Tertiary variant
+    &.tertiary {
+        border: none;
+        background: none;
+        color: var(--primary-blue-1-cta-default, #007CC1);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--cta-blue-3-pressed, #005483);
+
+            .icon {
+                svg {
+                    color: var(--cta-blue-3-pressed, #005483);
+                }
+            }
+        }
+
+        &:active {
+            color: var(--cta-blue-3-pressed, #005483);
+
+            .icon {
+                svg {
+                    color: var(--cta-blue-3-pressed, #005483);
+                }
+            }
+        }
+
+        &:disabled {
+            color: var(--cta-disabled-button-text, #79B9DE);
+            cursor: not-allowed;
+
+            .icon {
+                svg {
+                    color: var(--cta-disabled-button-text, #79B9DE);
+                }
+            }
+        }
+    }
+
+    &.iconButton {
+        min-width: 0px;
+    }
+}
+
+.textButtonBaseStyles {
+    // Layout
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    // Visual
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    /* Text color of a typical link */
+    cursor: pointer;
+    // Typography
+    color: var(--cta-blue-1-default, #007CC1);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    /* 125% */
+    letter-spacing: 0.144px;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--cta-blue-2-hover-state, #00669E);
+        letter-spacing: -0.016px;
+
+        .icon {
+            svg {
+                color: var(--cta-blue-2-hover-state, #00669E);
+            }
+        }
+    }
+
+    &:active {
+        text-decoration: underline;
+        color: var(--cta-blue-3-pressed, #005483);
+        letter-spacing: -0.016px;
+
+        .icon {
+            svg {
+                color: var(--cta-blue-3-pressed, #005483);
+            }
+        }
+    }
+
+    &:disabled {
+        text-decoration: none;
+        color: rgba(0, 124, 193, 0.50);
+        letter-spacing: -0.016px;
+        cursor: not-allowed;
+
+        .icon {
+            svg {
+                color: rgba(0, 124, 193, 0.50);
+            }
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            path {
+                fill: currentColor;
+            }
+        }
+    }
+}
+
+.textButtonUnderlined {
+    text-decoration: underline;
+}

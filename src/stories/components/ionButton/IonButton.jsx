@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./button.module.scss";
-
-import { ReactComponent as InfoIcon } from "../../assets/info.svg";
+import { Icon } from "../icon/Icon";
+import styles from "./ionButton.module.scss";
 
 /**
  * Button Component for UI interaction.
  */
-export const Button = ({
+export const IonButton = ({
   label,
   variant,
   size,
@@ -20,6 +19,48 @@ export const Button = ({
   children,
   ...props
 }) => {
+  const iconSizeValue = () => {
+    let height, width;
+
+    switch (size) {
+      case "lg":
+        height = 16;
+        width = 16;
+        break;
+      case "md":
+        height = 14;
+        width = 14;
+        break;
+      case "sm":
+        height = 12;
+        width = 12;
+        break;
+      case "xs":
+        height = 10;
+        width = 10;
+        break;
+      default:
+        height = 14;
+        width = 14;
+        break;
+    }
+
+    return { height, width };
+  };
+
+  const iconFillValue = () => {
+    switch (variant) {
+      case "primary":
+        return "#FFFFFF";
+      case "secondary":
+        return "#007CC1";
+      case "tertiary":
+        return "#007CC1";
+      default:
+        return "#FFFFFF";
+    }
+  };
+
   return (
     <button
       type="button"
@@ -36,27 +77,42 @@ export const Button = ({
       {...props}
     >
       {!iconButton && icon && iconPosition === "left" && (
-        <span className={styles.icon}>
-          {React.cloneElement(icon, { className: "iconSvg" })}
-        </span>
+        <div className={styles.icon}>
+          <Icon
+            src={icon}
+            size="custom"
+            {...iconSizeValue()}
+            fill={iconFillValue()}
+          />
+        </div>
       )}
       {iconButton ? (
-        <span className={styles.icon}>
-          {React.cloneElement(icon, { className: "iconSvg" })}
-        </span>
+        <div className={styles.icon}>
+          <Icon
+            src={icon}
+            size="custom"
+            {...iconSizeValue()}
+            fill={iconFillValue()}
+          />
+        </div>
       ) : (
         children || label
       )}
       {!iconButton && icon && iconPosition === "right" && (
-        <span className={styles.icon}>
-          {React.cloneElement(icon, { className: "iconSvg" })}
-        </span>
+        <div className={styles.icon}>
+          <Icon
+            src={icon}
+            size="custom"
+            {...iconSizeValue()}
+            fill={iconFillValue()}
+          />
+        </div>
       )}
     </button>
   );
 };
 
-Button.propTypes = {
+IonButton.propTypes = {
   /**
    * Contents of Button.
    */
@@ -78,7 +134,7 @@ Button.propTypes = {
   /**
    * Icon to display on button. Any SVG element/component can be passed as an icon.
    */
-  icon: PropTypes.node,
+  icon: PropTypes.string,
   /**
    * Position of Icon.
    */
@@ -101,13 +157,12 @@ Button.propTypes = {
   children: PropTypes.node,
 };
 
-Button.defaultProps = {
+IonButton.defaultProps = {
   label: "",
   variant: "primary",
   size: "sm",
   disabled: false,
-  // icon: null,
-  icon: <InfoIcon />,
+  icon: null,
   iconPosition: "left",
   iconButton: false,
   textButton: false,
